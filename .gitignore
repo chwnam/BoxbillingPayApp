@@ -1,0 +1,13 @@
+AlertPay.php
+AliPay.php
+AuthorizeNet.php
+ClientBalance.php
+Custom.php
+Interkassa.php
+Onebip.php
+PayPalEmail.php
+Payza.php
+Stripe.php
+TwoCheckout.php
+WebMoney.php
+WebToPay.php
