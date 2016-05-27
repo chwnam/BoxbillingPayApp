@@ -9,11 +9,11 @@
 ?>
 <div style="margin-top: 5px;">
     <div style="text-align: right;">
-        <button href="#" class="bb-button bb-button-submit" id="payapp-payment">클릭하여 페이앱으로 결제를 진행합니다.</button>
+        <a href="#" class="bb-button bb-button-submit" id="payapp-payment">클릭하여 페이앱 결제 진행</a>
     </div>
     <div style="margin-top: 10px;">
         <p>
-            버튼을 클랙하면 아래 그림과 같은 새 창이 열립니다. 이 창에서 결제를 진행하시면 됩니다.
+            버튼, 혹은를 클랙하면 아래 그림과 같은 새 창이 열립니다. 이 창에서 결제를 진행하시면 됩니다.
         </p>
         <p>
             <img src="/bb-library/Payment/Adapter/<?php echo $directory; ?>/includes/payapp-screenshot.png"/>
