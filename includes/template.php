@@ -9,7 +9,7 @@
 ?>
 <div style="margin-top: 5px;">
     <div style="text-align: right;">
-        <a href="#" class="bb-button bb-button-submit" id="payapp-payment">클릭하여 페이앱으로 결제를 진행합니다.</a>
+        <button href="#" class="bb-button bb-button-submit" id="payapp-payment">클릭하여 페이앱으로 결제를 진행합니다.</button>
     </div>
     <div style="margin-top: 10px;">
         <p>
