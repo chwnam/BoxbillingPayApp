@@ -10,3 +10,28 @@ cd <BoxBilling root>/bb-library/Payment/Adaptor
 git clone https://github.com/chwnam/BoxbillingPayApp PayApp
 ln -s PayApp/PayApp.php PayApp.php
 ```
+
+Huraga 테마에서 아이콘 연결
+========================
+
+``bb-themes/huraga/assets/css/logos.css`` 파일을 수정해야 합니다.
+
+css 파일 마지막에 다음과 같이 코드를 추가해 주세요
+
+```css
+.logo-PayApp{
+    background: transparent url("../img/gateway_logos/payapp-icon-small.gif") no-repeat scroll 0% 0%;
+    background-size: contain;
+    width:32px;
+    height: 32px;
+    border: 0;
+    margin: 10px;
+}
+```
+
+그리고 ``bb-themes/huraga/assets/img/gateway_logos`` 디렉토리에 심볼링 링크를 걸어 줍니다.
+
+```
+cd <boxbilling-root>/bb-themes/huraga/assets/img/gateway_logos
+ln -s ../../../../../bb-library/Payment/Adapter/BoxBillingPayApp/includes/payapp-icon-small.gif
+```
