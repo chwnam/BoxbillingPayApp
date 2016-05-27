@@ -2,7 +2,7 @@
 
 
 /**
- * PayApp payment method extension.
+ * BoxBilling PayApp payment method extension.
  *
  * @copyright Changwoo Nam
  * @license   Apache-2.0
@@ -171,8 +171,10 @@ class Payment_Adapter_PayApp extends Payment_AdapterAbstract implements \Box\Inj
             $thankyou_url = $this->getParam('thankyou_url');
             $redirect_url = $this->getParam('redirect_url');
 
+            $directory = basename(__DIR__);
+
             ob_start();
-            include('PayApp/template.php');
+            include('includes/template.php');
 
             return ob_get_clean();
         }
@@ -340,7 +342,7 @@ class Payment_Adapter_PayApp extends Payment_AdapterAbstract implements \Box\Inj
 
 
 /**
- * Class PayApp
+ * Class BoxBillingPayApp
  *
  * @license   Apache-2.0
  * @author    Changwoo Nam (ep6tri@hotmail.com)
