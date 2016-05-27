@@ -1,5 +1,4 @@
 (function ($) {
-
     var payURL = payAppObj.payURL;
     var payAppWin = null;
     var payAppPolling = null;
@@ -18,7 +17,6 @@
                     location.href = payAppObj.thankYouUrl;
                     break;
                 case 'unpaid':
-                    console.log('Unpaid: ' + totalPollCount);
                     return;
                 default:
                     location.href = payAppObj.redirectURL;
@@ -28,10 +26,12 @@
     }
 
     function onClickPayAppPayment() {
-        if (!payAppWin && payURL) {
-            payAppWin = window.open(payURL);
-        }
+        payAppWin = window.open(payURL);
         payAppWin.blur();
+        if(!payAppPolling) {
+            clearInterval(payAppPolling);
+            payAppPolling = null;
+        }
         payAppPolling = setInterval(pollWhileUnpaid, 5000);
         return false;
     }
@@ -41,5 +41,4 @@
         $('.loading').unbind('ajaxStart').unbind('ajaxStop');
         $('#payapp-payment').click(onClickPayAppPayment);
     });
-
 })($);
