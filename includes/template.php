@@ -13,7 +13,7 @@
     </div>
     <div style="margin-top: 10px;">
         <p>
-            버튼, 혹은를 클랙하면 아래 그림과 같은 새 창이 열립니다. 이 창에서 결제를 진행하시면 됩니다.
+            위의 버튼(혹은 링크)를 클랙하면 아래 그림과 같은 새 창이 열립니다. 이 창에서 결제를 진행하시면 됩니다.
         </p>
         <p>
             <img src="/bb-library/Payment/Adapter/<?php echo $directory; ?>/includes/payapp-screenshot.png"/>
