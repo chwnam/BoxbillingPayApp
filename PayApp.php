@@ -275,8 +275,7 @@ class Payment_Adapter_PayApp extends Payment_AdapterAbstract implements \Box\Inj
 
         $txService = $this->di['mod_service']('Invoice', 'Transaction');
         $txService->update($tx, $tx_data);
-
-        error_log('PayApp processTransaction() complete!');
+        
         return true;
     }
 
