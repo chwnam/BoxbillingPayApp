@@ -275,7 +275,7 @@ class Payment_Adapter_PayApp extends Payment_AdapterAbstract implements \Box\Inj
 
         $txService = $this->di['mod_service']('Invoice', 'Transaction');
         $txService->update($tx, $tx_data);
-        
+
         return true;
     }
 
@@ -554,6 +554,22 @@ class PayApp
     public static function checkResponseData($data, $specs)
     {
         $response = array();
+
+        // state validation
+        if(isset( $data['state']) && $data['state'] != '1') {
+            $message = '';
+            if(!isset($data['errno'])) {
+                $message .= 'error code not available. ';
+            } else {
+                $message .= 'Error code ' . $data['errno'];
+            }
+            if(!isset($data['errorMessage'])) {
+                $message .= 'error message not available. ';
+            } else {
+                $message = $data['errorMessage'];
+            }
+            throw new Payment_Exception('PayApp request failed: ' . $message);
+        }
 
         foreach ($specs as $spec) {
 
